@@ -21,12 +21,13 @@ const DropdownMenu = () => {
     useFeaturedProductsQuery()
 
   return (
+    <div className="h-full flex">
     <div
       onMouseEnter={() => setOpen(true)}
       onMouseLeave={() => setOpen(false)}
-      className="h-full"
+      className="h-full p-3"
     >
-      <div className="flex items-center h-full">
+      <div className="flex flex-col items-center h-full">
         <Popover className="h-full flex">
           <>
             <Link href="/shop" passHref>
@@ -112,6 +113,14 @@ const DropdownMenu = () => {
             </Transition>
           </>
         </Popover>
+      </div>
+    </div>
+      <div className="p-3">
+        <Link href="/location">
+          <a className="relative flex h-full">
+              Location
+          </a>
+        </Link>
       </div>
     </div>
   )
