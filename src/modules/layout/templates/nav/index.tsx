@@ -8,6 +8,7 @@ import clsx from "clsx"
 import Link from "next/link"
 import { useRouter } from "next/router"
 import { useEffect, useState } from "react"
+import Image from "next/image"
 
 const Nav = () => {
   const { pathname } = useRouter()
@@ -61,19 +62,33 @@ const Nav = () => {
             }
           )}
         >
-          <div className="flex-1 basis-0 h-full flex items-center">
-            <div className="block small:hidden">
-              <Hamburger setOpen={toggle} />
+          <div className="flex flex-row-reverse lg:flex-row items-center">
+            <div className="flex items-center h-full p-5">
+              <Link href="/">
+                <a>
+                <Image
+                  src="/FelixVita-symbol.png"
+                  width={40}
+                  height={40}
+                  loading="eager"
+                  priority={true}
+                  quality={100}
+                  objectFit="scale-down"
+                  alt="Logo"
+                  draggable="false"
+                />
+                </a>
+              </Link>
             </div>
-            <div className="hidden small:block h-full">
-              <DropdownMenu />
-            </div>
-          </div>
 
-          <div className="flex items-center h-full">
-            <Link href="/">
-              <a className="text-xl-semi uppercase">Acme</a>
-            </Link>
+            <div className="flex-1 h-full flex items-center">
+              <div className="block small:hidden">
+                <Hamburger setOpen={toggle} />
+              </div>
+              <div className="hidden small:block h-full">
+                <DropdownMenu />
+              </div>
+            </div>
           </div>
 
           <div className="flex items-center gap-x-6 h-full flex-1 basis-0 justify-end">
