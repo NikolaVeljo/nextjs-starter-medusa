@@ -2,6 +2,7 @@ import clsx from "clsx"
 import { useCollections } from "medusa-react"
 import Link from "next/link"
 import CountrySelect from "../country-select"
+import Image from "next/image"
 
 const FooterNav = () => {
   const { collections } = useCollections()
@@ -11,7 +12,7 @@ const FooterNav = () => {
       <div className="flex flex-col gap-y-6 xsmall:flex-row items-start justify-between">
         <div>
           <Link href="/">
-            <a className="text-xl-semi uppercase">Acme</a>
+            <a className="text-xl-semi uppercase">Felix Vita</a>
           </Link>
         </div>
         <div className="text-small-regular grid grid-cols-2 gap-x-16">
@@ -32,34 +33,41 @@ const FooterNav = () => {
             </ul>
           </div>
           <div className="flex flex-col gap-y-2">
-            <span className="text-base-semi">Medusa</span>
-            <ul className="grid grid-cols-1 gap-y-2">
+            <span className="text-base-semi">Social Networks</span>
+            <ul className="grid grid-cols-2 gap-y-2">
               <li>
-                <a
-                  href="https://github.com/medusajs"
-                  target="_blank"
-                  rel="noreferrer"
-                >
-                  GitHub
-                </a>
+                <Link href="/">
+                  <a>
+                  <Image
+                    src="/Facebook_logo.png"
+                    width={30}
+                    height={30}
+                    loading="eager"
+                    priority={true}
+                    quality={100}
+                    objectFit="scale-down"
+                    alt="Logo"
+                    draggable="false"
+                  />
+                  </a>
+                </Link>
               </li>
               <li>
-                <a
-                  href="https://docs.medusajs.com"
-                  target="_blank"
-                  rel="noreferrer"
-                >
-                  Documentation
-                </a>
-              </li>
-              <li>
-                <a
-                  href="https://github.com/medusajs/nextjs-starter-medusa"
-                  target="_blank"
-                  rel="noreferrer"
-                >
-                  Source code
-                </a>
+                <Link href="/">
+                  <a>
+                  <Image
+                    src="/Instagram_icon.png.webp"
+                    width={30}
+                    height={30}
+                    loading="eager"
+                    priority={true}
+                    quality={100}
+                    objectFit="scale-down"
+                    alt="Logo"
+                    draggable="false"
+                  />
+                  </a>
+                </Link>
               </li>
             </ul>
           </div>
@@ -67,11 +75,8 @@ const FooterNav = () => {
       </div>
       <div className="flex flex-col-reverse gap-y-4 justify-center xsmall:items-center xsmall:flex-row xsmall:items-end xsmall:justify-between">
         <span className="text-xsmall-regular text-gray-500">
-          © Copyright 2022 ACME
+          © Copyright 2023 Felix Vita
         </span>
-        <div className="min-w-[316px] flex xsmall:justify-end">
-          <CountrySelect />
-        </div>
       </div>
     </div>
   )
