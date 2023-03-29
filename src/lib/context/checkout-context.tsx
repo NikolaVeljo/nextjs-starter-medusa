@@ -241,10 +241,6 @@ export const CheckoutProvider = ({ children }: CheckoutProviderProps) => {
 
   const prepareFinalSteps = () => {
     initPayment()
-
-    if (shippingMethods) {
-      setShippingOption(shippingMethods[0].value)
-    }
   }
 
   const setSavedAddress = (address: Address) => {

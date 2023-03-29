@@ -7,6 +7,7 @@ type StepContainerProps = {
   title: string
   closedState?: React.ReactNode
   children?: React.ReactNode
+  shouldShowError: boolean
 } & React.HTMLAttributes<HTMLDivElement>
 
 const StepContainer = ({
@@ -15,11 +16,13 @@ const StepContainer = ({
   className,
   closedState,
   children,
+  shouldShowError,
   ...props
 }: StepContainerProps) => {
   const {
     editAddresses: { state },
   } = useCheckout()
+
   return (
     <div>
       <div
@@ -40,8 +43,8 @@ const StepContainer = ({
             className={clsx(
               "transition-[max-height,opacity] duration-700 ease-in-out overflow-hidden",
               {
-                "max-h-[9999px] opacity-100": !state,
-                "max-h-0 opacity-0": state,
+                "max-h-[9999px] opacity-100": shouldShowError,
+                "max-h-0 opacity-0": !shouldShowError,
               }
             )}
           >
@@ -52,8 +55,8 @@ const StepContainer = ({
             className={clsx(
               "transition-[max-height,opacity] duration-700 ease-in-out overflow-hidden",
               {
-                "max-h-[9999px] opacity-100": state,
-                "max-h-0 opacity-0": !state,
+                "max-h-[9999px] opacity-100": !shouldShowError,
+                "max-h-0 opacity-0": shouldShowError,
               }
             )}
           >

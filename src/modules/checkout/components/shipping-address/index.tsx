@@ -4,7 +4,6 @@ import ConnectForm from "@modules/common/components/connect-form"
 import Input from "@modules/common/components/input"
 import { useMeCustomer } from "medusa-react"
 import AddressSelect from "../address-select"
-import CountrySelect from "../country-select"
 
 const ShippingAddress = () => {
   const { customer } = useMeCustomer()
@@ -51,7 +50,7 @@ const ShippingAddress = () => {
                 touched={touchedFields}
               />
             </div>
-            <Input
+            {/* <Input
               label="Company"
               {...register("shipping_address.company")}
               autoComplete="organization"
@@ -73,8 +72,8 @@ const ShippingAddress = () => {
               autoComplete="address-line2"
               errors={errors}
               touched={touchedFields}
-            />
-            <div className="grid grid-cols-[122px_1fr] gap-x-2">
+            /> */}
+            {/* <div className="grid grid-cols-[122px_1fr] gap-x-2">
               <Input
                 label="Postal code"
                 {...register("shipping_address.postal_code", {
@@ -93,8 +92,8 @@ const ShippingAddress = () => {
                 errors={errors}
                 touched={touchedFields}
               />
-            </div>
-            <CountrySelect
+            </div> */}
+            {/* <CountrySelect
               {...register("shipping_address.country_code", {
                 required: "Country is required",
               })}
@@ -108,7 +107,7 @@ const ShippingAddress = () => {
               autoComplete="address-level1"
               errors={errors}
               touched={touchedFields}
-            />
+            /> */}
             <Input
               label="Phone"
               {...register("shipping_address.phone")}
