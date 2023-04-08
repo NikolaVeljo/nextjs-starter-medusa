@@ -74,9 +74,9 @@ const ProductInfoTab = ({ product }: ProductTabsProps) => {
           <div>
             <span className="font-semibold">Tags</span>
           </div>
-          <div className="flex justify-center whitespace-nowrap w-max bg-grey-20 rounded-rounded py-1 gap-x-1">
+          <div>
           {product.tags.map( (tag, index) => (
-              <span key={index} className="inline-block text-grey-50 inter-small-semibold">{tag.value}</span>
+              <span key={index} className="rounded bg-gray-400 inter-small-semibold text-white p-1 mr-1">{tag.value}</span>
             ))}
           </div>
         </div>
