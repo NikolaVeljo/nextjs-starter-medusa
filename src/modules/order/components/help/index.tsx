@@ -12,11 +12,6 @@ const Help = () => {
               <a>Contact</a>
             </Link>
           </li>
-          <li>
-            <Link href="/contact">
-              <a>Returns & Exchanges</a>
-            </Link>
-          </li>
         </ul>
       </div>
     </div>

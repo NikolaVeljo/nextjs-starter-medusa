@@ -3,7 +3,6 @@ import Radio from "@modules/common/components/radio"
 import clsx from "clsx"
 import React from "react"
 import PaymentStripe from "../payment-stripe"
-import PaymentTest from "../payment-test"
 
 type PaymentContainerProps = {
   paymentSession: PaymentSession
@@ -26,8 +25,8 @@ const PaymentInfoMap: Record<string, { title: string; description: string }> = {
     description: "Secure payment with PayPal",
   },
   manual: {
-    title: "Test payment",
-    description: "Test payment using medusa-payment-manual",
+    title: "Credit Card or Cash",
+    description: "You can pay with Credit Card or Cash, we will bring terminal to you!",
   },
 }
 
@@ -82,9 +81,6 @@ const PaymentElement = ({
           <PaymentStripe />
         </div>
       )
-    case "manual":
-      // We only display the test payment form if we are in a development environment
-      return process.env.NODE_ENV === "development" ? <PaymentTest /> : null
     default:
       return null
   }
