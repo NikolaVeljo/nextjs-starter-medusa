@@ -3,7 +3,7 @@ import { useCheckout } from "@lib/context/checkout-context"
 import clsx from "clsx"
 
 type StepContainerProps = {
-  index: number
+  index?: number
   title: string
   closedState?: React.ReactNode
   children?: React.ReactNode
@@ -32,9 +32,10 @@ const StepContainer = ({
         {...props}
       >
         <div className="text-xl-semi flex items-center gap-x-4 px-8 pb-6 pt-8">
+          {index &&
           <div className="bg-gray-900 w-8 h-8 rounded-full text-white flex justify-center items-center text-sm">
             {index}
-          </div>
+          </div>}
           <h2>{title}</h2>
         </div>
         <Disclosure>

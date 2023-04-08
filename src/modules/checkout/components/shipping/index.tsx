@@ -96,7 +96,7 @@ const Shipping: React.FC<ShippingProps> = ({ cart }) => {
 
   return (
     <StepContainer
-      index={sameBilling ? 2 : 3}
+      index={2}
       title="Delivery"
       shouldShowError={Boolean(cart.email)}
       closedState={

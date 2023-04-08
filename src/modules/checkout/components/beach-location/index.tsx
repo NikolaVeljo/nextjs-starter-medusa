@@ -11,7 +11,6 @@ const BeachLocation = () => {
   return (
     <StepContainer
       title="Beach Location"
-      index={3}
       shouldShowError={true}
       closedState={
         <div className="px-8 pb-8 text-small-regular">

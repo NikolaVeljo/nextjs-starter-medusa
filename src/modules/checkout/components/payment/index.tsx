@@ -36,7 +36,7 @@ const Payment = () => {
   return (
     <StepContainer
       title="Payment"
-      index={Boolean(cart?.billing_address?.address_1) || Boolean(cart?.shipping_methods[0]?.shipping_option.name === "Pick it from the store") ? 3 : 4}
+      index={3}
       shouldShowError={Boolean(cart?.billing_address?.address_1) || Boolean(cart?.shipping_methods[0]?.shipping_option.name === "Pick it from the store")}
       closedState={
         <div className="px-8 pb-8 text-small-regular">

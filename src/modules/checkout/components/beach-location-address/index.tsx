@@ -4,7 +4,6 @@ import BeachLocation from "../beach-location"
 import Button from "@modules/common/components/button"
 const BeachLocationAddress = () => {
   const {
-    editAddresses: { state: isEdit, toggle: setEdit },
     cart,
     handleSubmit,
     setAddresses
