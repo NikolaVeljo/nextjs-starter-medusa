@@ -1,5 +1,5 @@
 import { formatAmount, useCart, useProducts } from "medusa-react"
-import { useMemo } from "react"
+import { useEffect, useMemo } from "react"
 import { CalculatedVariant } from "types/medusa"
 
 type useProductPriceProps = {
@@ -10,13 +10,19 @@ type useProductPriceProps = {
 const useProductPrice = ({ id, variantId }: useProductPriceProps) => {
   const { cart } = useCart()
 
-  const { products, isLoading, isError } = useProducts(
+  const { products, isLoading, isError, refetch } = useProducts(
     {
       id: id,
       cart_id: cart?.id,
     },
-    { enabled: !!cart }
+    { enabled: !!cart?.id && !!cart?.region_id }
   )
+
+  useEffect(() => {
+    if (cart?.region_id) {
+      refetch()
+    }
+  }, [cart?.region_id, refetch])
 
   const product = products?.[0]
 
@@ -32,7 +38,7 @@ const useProductPrice = ({ id, variantId }: useProductPriceProps) => {
       return null
     }
 
-    const variants = product.variants as CalculatedVariant[]
+    const variants = product.variants as unknown as CalculatedVariant[]
 
     const cheapestVariant = variants.reduce((prev, curr) => {
       return prev.calculated_price < curr.calculated_price ? prev : curr
@@ -55,7 +61,7 @@ const useProductPrice = ({ id, variantId }: useProductPriceProps) => {
         cheapestVariant.calculated_price
       ),
     }
-  }, [product, cart])
+  }, [product, cart?.region])
 
   const variantPrice = useMemo(() => {
     if (!product || !variantId || !cart?.region) {
@@ -64,7 +70,7 @@ const useProductPrice = ({ id, variantId }: useProductPriceProps) => {
 
     const variant = product.variants.find(
       (v) => v.id === variantId || v.sku === variantId
-    ) as CalculatedVariant
+    ) as unknown as CalculatedVariant
 
     if (!variant) {
       return null
@@ -87,7 +93,7 @@ const useProductPrice = ({ id, variantId }: useProductPriceProps) => {
         variant.calculated_price
       ),
     }
-  }, [product, variantId, cart])
+  }, [product, variantId, cart?.region])
 
   return {
     product,
