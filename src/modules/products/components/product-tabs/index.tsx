@@ -1,10 +1,14 @@
 import { Tab } from "@headlessui/react"
 import { Product } from "@medusajs/medusa"
+import { PricedProduct } from "@medusajs/medusa/dist/types/pricing"
+import Back from "@modules/common/icons/back"
+import FastDelivery from "@modules/common/icons/fast-delivery"
+import Refresh from "@modules/common/icons/refresh"
 import clsx from "clsx"
 import { useMemo } from "react"
 
 type ProductTabsProps = {
-  product: Product
+  product: PricedProduct
 }
 
 const ProductTabs = ({ product }: ProductTabsProps) => {
@@ -68,6 +72,24 @@ const ProductInfoTab = ({ product }: ProductTabsProps) => {
             <span className="font-semibold">Weight</span>
             <p>{product.weight ? `${product.weight} g` : "-"}</p>
           </div>
+          <div>
+            <span className="font-semibold">Dimensions</span>
+            <p>
+              {product.length && product.width && product.height
+                ? `${product.length}L x ${product.width}W x ${product.height}H`
+                : "-"}
+            </p>
+          </div>
+        </div>
+      </div>
+      {product.tags?.length ? (
+        <div>
+          <span className="font-semibold">Tags</span>
+        </div>
+      ) : null}
+    </Tab.Panel>
+  )
+}
 
           {product.tags.length ? (
         <div>

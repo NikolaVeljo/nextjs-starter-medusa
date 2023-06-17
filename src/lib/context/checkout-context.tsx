@@ -43,7 +43,7 @@ export type CheckoutFormValues = {
 
 interface CheckoutContext {
   cart?: Omit<Cart, "refundable_amount" | "refunded_total">
-  shippingMethods: { label: string; value: string; price: string }[]
+  shippingMethods: { label?: string; value?: string; price: string }[]
   isLoading: boolean
   readyToComplete: boolean
   sameAsBilling: StateType
@@ -241,6 +241,10 @@ export const CheckoutProvider = ({ children }: CheckoutProviderProps) => {
 
   const prepareFinalSteps = () => {
     initPayment()
+    // TODO check this
+    if (shippingMethods?.length && shippingMethods?.[0]?.value) {
+      setShippingOption(shippingMethods[0].value)
+    }
   }
 
   const setSavedAddress = (address: Address) => {
