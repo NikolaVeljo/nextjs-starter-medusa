@@ -91,23 +91,4 @@ const ProductInfoTab = ({ product }: ProductTabsProps) => {
   )
 }
 
-          {product.tags.length ? (
-        <div>
-          <div>
-            <span className="font-semibold">Tags</span>
-          </div>
-          <div>
-          {product.tags.map( (tag, index) => (
-              <span key={index} className="rounded bg-gray-400 inter-small-semibold text-white p-1 mr-1">{tag.value}</span>
-            ))}
-          </div>
-        </div>
-
-      ) : null}
-        </div>
-      </div>
-    </Tab.Panel>
-  )
-}
-
 export default ProductTabs
