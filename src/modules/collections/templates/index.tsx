@@ -13,7 +13,7 @@ type CollectionTemplateProps = {
   collection: {
     id: string
     title: string,
-    metadata: any
+    metadata?: any
   }
 }
 
