@@ -33,11 +33,21 @@ const Payment = () => {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [cart])
 
+  const shippingMethodsToCheck = cart?.shipping_methods
+  let isShippingMethodOk = false
+  if(shippingMethodsToCheck?.length){
+    isShippingMethodOk = Boolean(
+      shippingMethodsToCheck[0]?.shipping_option.name === "Pick it from the store"
+    )
+  } else {
+    isShippingMethodOk = false
+  }
+
   return (
     <StepContainer
       title="Payment"
       index={3}
-      shouldShowError={Boolean(cart?.billing_address?.address_1) || Boolean(cart?.shipping_methods[0]?.shipping_option.name === "Pick it from the store")}
+      shouldShowError={Boolean(cart?.billing_address?.address_1) || isShippingMethodOk}
       closedState={
         <div className="px-8 pb-8 text-small-regular">
           <p>Choose delivery method to see available payment options.</p>
