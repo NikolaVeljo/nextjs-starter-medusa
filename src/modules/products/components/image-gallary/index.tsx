@@ -46,7 +46,6 @@ const ImageGallery = ({ images }: ImageGalleryProps) => {
       </div>
       <div className="flex flex-col flex-1 small:mx-16 gap-y-4">
         {images.map((image, index) => {
-          console.log(image.url, 'url')
           return (
             <div
               ref={(image) => imageRefs.current.push(image)}
