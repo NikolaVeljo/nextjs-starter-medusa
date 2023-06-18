@@ -9,7 +9,7 @@ const Hero = () => {
         </h1>
         <div className="text-base-regular min-w-[40vw] min-h-[20vh] small:min-w-[30vw] small:min-h-[30vh] drop-shadow-md shadow-black">
           <Image
-            src="/FelixVita-logo-white.png"
+            src="/images/FelixVita-logo-white.png"
             layout="fill"
             loading="eager"
             priority={true}
@@ -28,7 +28,7 @@ const Hero = () => {
             background: "#000000",
             opacity: 0.5
           }}
-          src="/hero.jpg"
+          src="/images/hero.jpg"
           layout="fill"
           loading="eager"
           priority={true}

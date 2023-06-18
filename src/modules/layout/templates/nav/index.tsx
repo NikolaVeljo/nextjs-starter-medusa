@@ -67,7 +67,7 @@ const Nav = () => {
               <Link href="/">
                 <a>
                 <Image
-                  src="/FelixVita-symbol.png"
+                  src="/images/FelixVita-symbol.png"
                   width={40}
                   height={40}
                   loading="eager"

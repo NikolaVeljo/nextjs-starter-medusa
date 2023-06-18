@@ -39,7 +39,7 @@ const FooterNav = () => {
                 <Link href="/">
                   <a>
                   <Image
-                    src="/Facebook_logo.png"
+                    src="/images/Facebook_logo.png"
                     width={30}
                     height={30}
                     loading="eager"
@@ -56,7 +56,7 @@ const FooterNav = () => {
                 <Link href="/">
                   <a>
                   <Image
-                    src="/Instagram_icon.png.webp"
+                    src="/images/Instagram_icon.png.webp"
                     width={30}
                     height={30}
                     loading="eager"
