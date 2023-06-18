@@ -12,7 +12,8 @@ import { useInView } from "react-intersection-observer"
 type CollectionTemplateProps = {
   collection: {
     id: string
-    title: string
+    title: string,
+    metadata: any
   }
 }
 
@@ -65,6 +66,7 @@ const CollectionTemplate: React.FC<CollectionTemplateProps> = ({
       <div className="mb-8 text-2xl-semi">
         <h1>{collection.title}</h1>
       </div>
+      <p className="mb-8">{collection.metadata?.description}</p>
       <ul className="grid grid-cols-2 small:grid-cols-3 medium:grid-cols-4 gap-x-4 gap-y-8">
         {previews.map((p) => (
           <li key={p.id}>
