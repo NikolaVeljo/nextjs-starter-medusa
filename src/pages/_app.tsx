@@ -7,6 +7,8 @@ import { Hydrate } from "@tanstack/react-query"
 import { CartProvider, MedusaProvider } from "medusa-react"
 import "styles/globals.css"
 import { AppPropsWithLayout } from "types/global"
+import Image from "next/image"
+import UnderConstruction from "../pages/underconstruction"
 
 function App({
   Component,
@@ -27,7 +29,8 @@ function App({
             <CartProvider>
               <StoreProvider>
                 <AccountProvider>
-                  {getLayout(<Component {...pageProps} />)}
+                <UnderConstruction />
+                  {/* {getLayout(<Component {...pageProps} />)} */}
                 </AccountProvider>
               </StoreProvider>
             </CartProvider>
