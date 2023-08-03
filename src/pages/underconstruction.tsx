@@ -64,7 +64,7 @@ const UnderConstruction = () => {
             THE FELIXVITA SITE IS UNDER CONSTRUCTION
         </h1>
         <button
-          className={`z-10 absolute top-3/4 left-1/2 transform -translate-x-1/2 mt-28 text-black cursor-pointer transition-all ease-in-out ${showMenu ? 'opacity-0 pointer-events-none' : 'opacity-100'}`}
+          className={`z-10 absolute top-3/4 left-1/2 transform -translate-x-1/2 text-black cursor-pointer transition-all ease-in-out ${showMenu ? 'opacity-0 pointer-events-none' : 'opacity-100'}`}
           onClick={handleMenuClick}
           style={{ transition: 'all 1.2s ease-in-out' }}
         >
