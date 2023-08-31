@@ -1,0 +1,105 @@
+html, body {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: Inter,-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Helvetica Neue,Ubuntu,sans-serif;
+}
+
+.construction-title {
+  font-weight: 400;
+  font-size: 2.3rem;
+  z-index: 10;
+  color: red;
+  margin-bottom: 1.25rem;
+  letter-spacing: 0.1em;
+  margin-left: 10px;
+  margin-right: 10px;
+  text-align: center;
+  transition: all 0.3s ease-in-out;
+  opacity: 1;
+}
+
+
+@media (min-width: 768px) {
+  .construction-title {
+      font-size: 3rem;
+  }
+}
+
+
+@media (min-width: 1024px) {
+  .construction-title {
+      font-size: 4rem;
+      margin-left: 15px;
+      margin-right: 15px;
+  }
+}
+
+.container {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+}
+
+.background {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.text {
+  color: #ffffff;
+  z-index: 1;
+  transition: all 1.2s ease-in-out;
+}
+
+.menu-button {
+  font-size: 2rem;
+  letter-spacing: 0.05em;
+  background-color: transparent;  /* Remove the background */
+  border: none;                   /* Remove the border */
+  cursor: pointer;
+  z-index: 1;
+  position: absolute;
+  top: 75%;
+  left: 50%;
+  transform: translateX(-50%);
+  transition: all 1.2s ease-in-out;
+  text-decoration: underline;    /* Add underline to the text */
+  color: #ffffff;
+}
+
+.menu-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: none;
+  z-index: 1000;
+  background-color: #fff;
+}
+
+.bg-image {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: 0;
+}
+
+.menu-image {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  background-color: black;
+  opacity: 0.7;
+}
